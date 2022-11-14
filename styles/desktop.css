@@ -1,17 +1,44 @@
-* { box-sizing: border-box }
-
-body{
-  background-image: url("https://images.unsplash.com/photo-1476673160081-cf065607f449?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2072&q=80");
-  background-size: cover; 
-  background-position: center; 
-  background-attachment: fixed;
-  padding:0;
-  margin:0;
+* {
+  box-sizing: border-box
 }
 
-.taskbar{
+body {
+  background-image: url(/wallpapers/defaultwallpaper.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  padding: 0;
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* CSS Variables for theming purposes */
+:root {
+  --ml: 8px;
+  --bg: rgba(255, 255, 255, 0.4);
+  --bg-dark: #f5f7f9;
+  --fg: #222222;
+  --border-radius: 7px;
+}
+
+.windowContainer {
+  background-color: solid;
+  color: var(--fg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.windowContainer > div {
+  flex: 1;
+  height: 100%;
+}
+
+
+.taskbar {
   background-color: rgba(255, 255, 255, 0.3);
-  color:white;
+  color: white;
   font-family: Roboto;
   height: 50px;
   display: flex;
@@ -22,52 +49,52 @@ body{
   bottom: 0px;
   width: 100%;
   backdrop-filter: blur(20px) contrast(1.1) saturate(1.1);
-  -webkit-backdrop-filter: blur(20px) contrast(1.1) saturate(1.1); /* iOS/WebKit */
+  -webkit-backdrop-filter: blur(20px) contrast(1.1) saturate(1.1);
   border-top: 2px solid rgba(255, 255, 255, 0.2);
 }
 
-.taskbarbutton{
+.taskbarbutton {
   background-color: rgba(255, 255, 255, 0.8);
   color: rgb(0, 0, 0);
-  font-family: Roboto;
   border: none;
   height: 30px;
   width: 30px;
   margin-right: 10px;
   border-radius: 3px;
-
+  cursor: pointer;
   transition: background-color 0.15s;
 }
 
-.taskbarbutton:hover{
-  background-color: rgba(218, 218, 218, 0.8);
+.taskbarbutton:hover {
+  background-color: rgba(245, 245, 245, 0.9);
 }
 
-.taskbarbutton:active{
-  background-color:rgba(182, 182, 182, 0.8) ;
+.taskbarbutton:active {
+  background-color: rgba(245, 245, 245, 0.6);
 }
 
-.controlareabutton{
+.controlareabutton {
   background-color: rgba(255, 255, 255, 0);
-  color: rgb(255, 255, 255);
-  font-family: Roboto;
+  color: rgb(0, 0, 0);
+  font-family: 'Roboto', 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   border: none;
   padding-left: 10px;
   padding-right: 10px;
   height: 30px;
   margin-right: 3px;
   border-radius: 3px;
-
   transition: background-color 0.15s;
 }
 
-.time { margin-left: auto }
+.time {
+  margin-left: auto
+}
 
-.start-menu{
+.start-menu {
   display: flex;
   background-color: rgba(255, 255, 255, 0.3);
-  color:white;
-  font-family: Roboto;
+  color: white;
+  font-family: 'Roboto','Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   align-items: center;
   position: absolute;
   bottom: 65px;
@@ -75,7 +102,7 @@ body{
   height: 600px;
   width: 500px;
   backdrop-filter: blur(20px) contrast(1.1) saturate(1.1);
-  -webkit-backdrop-filter: blur(20px) contrast(1.1) saturate(1.1); /* iOS/WebKit */
+  -webkit-backdrop-filter: blur(20px) contrast(1.1) saturate(1.1);
   border-top: 2px solid rgba(255, 255, 255, 0.2);
   border-radius: 6px;
   transition: transform 0.35s ease, opacity 0.25s ease;
@@ -86,4 +113,178 @@ body{
 .start-menu.open {
   pointer-events: all;
   transform: translateX(0);
+}
+
+.hidden {
+  display: none;
+}
+
+.wb-title {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  align-content: center;
+  padding-left: 3.5px;
+  padding-right: 3.5px;
+  color: #000;
+}
+
+.wb-body {
+  background-color: var(--bg);
+  color: var(--fg);
+}
+
+.wb-header {
+  height: 38px;
+  line-height: 38px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0px 2px 6px 2px rgba(0, 0, 0, 0.05);
+}
+
+.wb-min {
+  background-image: url(/windowelements/Minimize.png);
+  background-size: 9px;
+  background-position: center;
+  background-position-y: 19.25px;
+}
+
+.wb-max {
+  background-image: url(/windowelements/Maximize.png);
+  background-size: 11px;
+
+}
+
+.wb-close {
+  background-image: url(/windowelements/Close.png);
+  background-size: 9px;
+}
+
+.wb-control * {
+  width: 23px
+}
+.wb-control :last-child {
+  padding-right: 28px;
+}
+
+.winbox {
+  top: 38px;
+  background: transparent;
+  backdrop-filter: blur(40px) contrast(1.3) saturate(1.3);
+  -webkit-backdrop-filter: blur(40px) contrast(1.3) saturate(1.3);
+  border-radius: 6px;
+  border: 1px solid rgb(255, 255, 255);
+  outline: 1px solid rgb(160, 163, 164);
+  transition-property: width, height, left, top, border-radius;
+  transition-duration: 0.35s;
+  overflow: clip;
+}
+
+.winbox.max {
+  height: calc(100vh - 54px) !important;
+  width: calc(100vw - 4px) !important;
+  left: 2px !important;
+  top: 2px !important;
+  border-radius: 0;
+}
+
+.text-normal{
+  font-family: 'Inter', sans-serif;
+  font-size: 11.5px;
+  color: #000;
+}
+
+.left, .right {
+  flex-grow: 1;
+  flex-basis: 0;
+}
+
+.right{
+  text-align: right;
+}
+
+.sidebar {
+  max-width: 255px;
+  background-color: rgba(255, 255, 255, 0.8);
+  overflow: auto;
+  display: flex;
+  justify-content: center;
+  padding-top: 25px;
+}
+
+.sidebar span {
+  flex: 1;
+}
+
+.content {
+  background-color: var(--bg);
+  overflow: auto;
+}
+
+.elementcenter {
+  text-align: center;
+}
+
+.elementright {
+  float: right;
+}
+
+.winbutton, .winsearchbar{
+  background-color: rgba(255, 255, 255, 1);
+  border-color: rgb(160, 163, 164);
+  border-style: solid;
+  border-radius: 3px;
+  border-width: 1px;
+  height: 26px;
+  padding-left: 14px;
+  padding-right: 14px;
+  font-size: 11.5px;
+  box-shadow: 0px 0.5px 1px 0.25px rgba(0, 0, 0, 0.2);
+
+  transition: background-color 0.10s, border-color 0.10s;
+}
+
+.winbutton{
+  margin-left: 6px;
+}
+
+.winbutton:hover {
+  background-color: rgb(229, 242, 248);
+  border-color: rgb(89, 152, 228);
+}
+.winbutton:active {
+  background-color: rgb(206, 240, 255);
+}
+
+.winsearchbar{
+  width: 205px;
+  text-align: left;
+  outline: 0;
+}
+
+.winsearchbar:hover{
+  background-color: rgb(245, 250, 252);
+}
+
+.winsearchbar:focus {
+  border-color: rgb(0, 160, 240)
+}
+
+.winaccentbutton{
+  background-color: rgba(41, 184, 255, 0.8);
+  border-color: rgb(0, 160, 240);
+  color: rgb(255, 255, 255);
+}
+
+.alertheader{
+  background-color: rgba(255, 255, 255, 0.9);
+  padding-top: 9.5px;
+  padding-bottom: 9.5px;
+  padding-left: 15px;
+  padding-right: 12px;
+  display: flex;
+  align-items: center;
+}
+
+.alertheader span {
+  flex: 1;
 }

@@ -1,22 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>ZoneOS</title>
-    <script type="text/javascript" src="js/desktop.js"></script>
-    <link rel="stylesheet" href="styles/desktop.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-  </head>
 
-  <body>
+<head>
+  <title>ZoneOS</title>
+  <script type="text/javascript" src="js/desktop.js"></script>
+  <script src="js/winbox.js"></script>
+  <link rel="stylesheet" href="styles/desktop.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
 
-    <div class="start-menu"></div>
+<body>
 
-    <div class="taskbar">
-      <button class="taskbarbutton start-menu-open"></button>
-      <button class="controlareabutton time"></button>
+  <div class="start-menu"></div>
+
+  <div class="taskbar">
+    <button class="taskbarbutton start-menu-open"></button>
+    <button class="controlareabutton time"></button>
+  </div>
+
+  <div class="hidden">
+    <div data-wintemplate="settings">
+      <div class="windowContainer">
+        <div class="sidebar">
+          <input class="elementright winsearchbar" placeholder="Search...">
+          
+          </input >
+        </div>
+
+        <div class="content">
+
+          <div class="alertheader text-normal">
+
+              <span>This installation is not activated.</span>
+
+              <button class="elementright winbutton winaccentbutton">
+                Activate
+              </button>
+
+              <button class="elementright winbutton">
+                Later
+              </button>
+        
+          </div>
+
+          <button class="elementright winbutton">Content !!!!</button>
+          <button class="elementright winbutton">Content !!!!</button>
+
+          <button class="winbutton">Content !!!!</button>
+          <button class="winbutton">Content !!!!</button>
+          
+        </div>
+      </div>
     </div>
+  </div>
 
-  </body>
+
+
+</body>
+
 </html>
